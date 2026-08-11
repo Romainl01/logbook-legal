@@ -4,7 +4,7 @@ title: Terms of Service — Logbook
 
 # Terms of Service
 
-**Last updated: 9 August 2026**
+**Last updated: 11 August 2026**
 
 ## 1. Who we are, and what these terms cover
 
@@ -22,7 +22,9 @@ Logbook lets you scan One Piece Card Game cards with your phone's camera, keep t
 
 Logbook is a **catalogue and tracking tool**. It is not a marketplace, a broker, a price guide of record, or a financial product. You cannot buy or sell cards through it, and we are not party to any transaction you make elsewhere.
 
-Logbook is currently free to use. If paid features are introduced later, their terms and prices will be presented to you before you subscribe, and these terms will be updated.
+**Logbook is free up to the first ten items in your collection, and requires a subscription above that.** The subscription is not a set of extra features: it removes the ceiling, and everything the app does is available below it. Be aware that the ceiling applies to scanning too, not only to storing: once you reach it, the scanner stops identifying new cards until you subscribe.
+
+The subscription is sold and billed by **Apple**, through your App Store account, and renews automatically until you cancel it. The price and the billing period are shown to you on the purchase screen before you buy, in your own currency. You cancel it in your Apple account settings, not here, and cancelling stops the next renewal rather than the period you have already paid for. If you cancel, anything past your first ten items is hidden until you subscribe again; nothing is deleted.
 
 ## 3. Your account
 
@@ -55,17 +57,22 @@ We accept no liability for any decision you make, or any loss you suffer, on the
 
 ## 5. Card identification is best-effort
 
-Card recognition — on your device or via our servers — is automated and imperfect. It can misread a card, miss a variant, or fail entirely, particularly on damaged cards, unusual lighting, graded slabs, or newly released sets that are not yet in our catalogue.
+Card recognition runs on your device, and it is automated and imperfect. It can misread a card, miss a variant, or fail entirely, particularly on damaged cards, unusual lighting, graded slabs, or newly released sets that are not yet in our catalogue. When it fails, you can type the card's code in by hand.
 
 You are responsible for checking that what you added to your collection is the card you actually own. Logbook shows you the candidates and lets you correct them; use that.
 
 Our card catalogue is compiled from public data sources and may contain errors, gaps or omissions, especially around new releases.
 
-## 6. Your collection lives on your device
+## 6. Your collection is stored on your account
 
-Your collection and your wishlist are stored **on your phone only**. We do not hold a copy, and we cannot restore one.
+Your collection, your sealed products and your wishlist are stored **on your account, on our servers**, and kept in step with a copy on your device so the app works offline. Sign in on a new phone and your collection comes back.
 
-**Consequence you must be aware of:** if you lose your phone, reset it, delete the app, or delete your account, your collection is permanently gone. There is no server-side backup today. Cloud backup is planned, but you should not use Logbook as if it already existed.
+Two consequences you should be aware of:
+
+- **Deleting your account deletes your collection**, on our servers and on the device you are signed in on. That is deliberate and it cannot be undone. Deleting only the app leaves your account and your collection intact.
+- **A backup is not a guarantee.** We take reasonable care, but Logbook is a personal project run by one person, we do not promise a service level (section 10), and you should not treat it as the only record of a collection that matters to you financially.
+
+What our copy is for is described in the [Privacy Policy](https://romainl01.github.io/logbook-legal/privacy-policy): giving your collection back to you, and nothing else.
 
 ## 7. Intellectual property, and our independence from Bandai
 
@@ -87,7 +94,7 @@ If you believe Logbook uses content you hold rights to in a way you have not aut
 
 ## 8. Your content
 
-Everything you enter — your collection, your wishlist, your purchase prices, your notes — is yours. It stays on your device, we claim no rights over it, and Logbook has no social or publishing features: nothing you enter is shared with other users or made public.
+Everything you enter, meaning your collection, your wishlist and your purchase prices, is yours. We store it so you do not lose it (section 6), we claim no rights over it, and Logbook has no social or publishing features: nothing you enter is shared with other users or made public.
 
 ## 9. Acceptable use
 
@@ -96,11 +103,11 @@ Please do not:
 - use Logbook for anything illegal, or to infringe anyone's rights;
 - attempt to break, overload, probe or reverse-engineer the app or our servers;
 - scrape, bulk-extract or redistribute our card catalogue or price data;
-- use automated systems to send scan requests at a volume a human collector would not produce;
+- use automated systems to write to our servers at a volume a human collector would not produce;
 - circumvent any technical limit, quota or paid feature;
 - impersonate someone else, or create accounts in bulk.
 
-Card recognition is billed to us per request. Abusing it takes the free version away from everyone.
+Storage and bandwidth are billed to us. Abusing them takes the free version away from everyone.
 
 ## 10. Availability, and changes to the service
 
@@ -121,9 +128,9 @@ Nothing in these terms excludes liability that cannot be excluded by law — inc
 Subject to that, and to the fullest extent permitted by law:
 
 - Logbook is provided without warranty of any kind, express or implied, including as to accuracy, merchantability or fitness for a particular purpose;
-- we are not liable for indirect or consequential losses, for lost profits, for lost opportunities, or for the loss of collection data stored on your device;
+- we are not liable for indirect or consequential losses, for lost profits, for lost opportunities, or for the loss of collection data, whether it was held on your device or on our servers;
 - we are not liable for decisions taken on the basis of the indicative prices described in section 4;
-- where our liability cannot be excluded, it is limited to the amount you paid us for Logbook in the twelve months before the event — which, while the app is free, is zero.
+- where our liability cannot be excluded, it is limited to the amount you paid for Logbook in the twelve months before the event.
 
 ## 13. Changes to these terms
 
