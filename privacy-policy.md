@@ -4,14 +4,15 @@ title: Privacy Policy — Logbook
 
 # Privacy Policy
 
-**Last updated: 11 August 2026**
+**Last updated: 12 August 2026**
 
 ## The short version
 
 - **Photos of your cards never leave your phone.** Logbook reads the card code on the device itself, using Apple's on-device text recognition. No picture is ever uploaded, and a scan works with no internet connection at all.
 - **Your collection is stored on your account**, on our servers, so that it survives a reinstall or a new phone. No other user of Logbook can read it.
 - **Apart from your collection, the only thing we hold is your account:** your email address, and, if you use Sign in with Apple, the user identifier and the name Apple gives us.
-- **No advertising, no tracking, no analytics, no data sold.** The app contains no third-party tracking or measurement SDK of any kind.
+- **No advertising, no cross-app tracking, no data sold.** Logbook contains no advertising SDK and no advertising identifier, and it never follows you into other apps or websites.
+- **We do measure how the app itself is used**, with a product analytics tool called PostHog: which screens you open, whether a scan succeeded, how long it took. It is tied to your account identifier so we can tell a returning visitor from a new one, and it carries no email address, no name, and none of the prices you enter. You can ask us to stop at any time and we will. Section 2.6 lists exactly what it sends.
 
 The rest of this page explains the details.
 
@@ -70,9 +71,10 @@ The price data is a separate matter and says nothing about you: the app download
 Like any app that connects to the internet, Logbook's requests carry technical connection data: your IP address, the time of the request, and basic device and network information. This applies when:
 
 - your device fetches the daily price file from our public storage bucket;
-- your device fetches card images from the third-party image CDN `static.dotgg.gg`;
+- your device fetches card images from the third-party image CDN `static.dotgg.gg`, and set and sealed-product images from the third-party image CDN `tcgplayer-cdn.tcgplayer.com`;
 - your device signs you in, refreshes its session, or syncs your collection with our database;
-- the app asks our payments provider whether your subscription is active (section 2.5).
+- the app asks our payments provider whether your subscription is active (section 2.5);
+- the app sends the usage events described in section 2.6 to PostHog. We have turned off PostHog's location lookup, so your IP address is never turned into a city or a country, and no location is stored alongside those events.
 
 The requests that carry your session are tied to your account by necessity: that is how the server knows whose collection to hand back. We do not build profiles from any of this, and we do not use it for anything beyond running and securing the service.
 
@@ -83,6 +85,25 @@ Logbook is free up to a limited number of items in your collection, and paid abo
 - **Apple takes the payment.** We never see your card number, your billing address or your Apple ID password. None of it passes through us, and we store no payment method.
 - **We use RevenueCat to know whether your subscription is active.** The app sends it the App Store transaction receipt, the technical device and store information its SDK needs to match a purchase to a device, and, once you are signed in, your Logbook account identifier, so that a subscription bought on one device is recognised on the next. RevenueCat receives nothing else from us: not your email address, not your name, not your collection.
 
+### 2.6 How you use the app
+
+Since August 2026, Logbook measures how it is used, so that we can tell which parts work and which parts people abandon. This is done with PostHog, a product analytics tool. It is not advertising, and it does not follow you outside Logbook.
+
+**What is sent.** One short record per meaningful action, carrying only what is needed to count it:
+
+- **Screens you open**, named after the app's own routes (`/cards`, `/dashboard`).
+- **Scans**: that you took a picture, whether a card was recognised, how long recognition took, the card's code and set, and whether you corrected our answer. The photograph itself is never part of this and never leaves your phone (section 2.2 is unchanged).
+- **Your collection changing**: that a card or a sealed product was added or removed, which one it was, and whether you recorded a purchase price.
+- **The paywall**: that it was shown, which plan was highlighted, and whether a purchase completed, was cancelled or failed. The amount is the App Store's own public price for the plan, not a payment detail.
+- **Your account identifier**, so that two visits by the same person are not counted as two people. It is the same identifier described in section 2.1.
+- **Which version of the app** you are running, and whether it is a test build.
+
+**What is never sent.** Your email address. Your name. The prices you enter for your own cards, whether you paid them or sold at them: those are sent as "a price was recorded", never as a figure. The total value of your collection leaves only as a broad band (for example "250 to 1000 euros"), never as an amount. No photograph, no advertising identifier, and nothing that follows you into another app.
+
+**Why we do this.** Legitimate interest, Art. 6(1)(f): a project this small cannot otherwise tell whether the scanner works on real cards, or whether people give up before their first one. We have kept the data minimal precisely so that this basis is honest, and we treat it as measurement of the product rather than knowledge about you.
+
+**How to object.** Because this rests on legitimate interest and not on your consent, you have the right to object to it (GDPR Art. 21). Write to **logbook.ugc@gmail.com** and we will stop collecting these events for your account and delete the ones already recorded. There is no switch inside the app: the app does not ask you, and it does not let you turn it off by yourself.
+
 ## 3. Why we process it, and on what legal basis
 
 | Purpose | Data | Legal basis (GDPR Art. 6) |
@@ -92,6 +113,7 @@ Logbook is free up to a limited number of items in your collection, and paid abo
 | Revoking your Apple authorisation when you delete your account | Apple refresh token | Performance of a contract, Art. 6(1)(b), and our legitimate interest in meeting Apple's platform requirements, Art. 6(1)(f) |
 | Selling a subscription, and recognising it on your other devices | Store transaction data, your account identifier | Performance of a contract, Art. 6(1)(b) |
 | Keeping the service available and secure (technical logs, abuse prevention) | Technical connection data | Legitimate interest, Art. 6(1)(f) |
+| Understanding how the app is used, so we can improve it | The usage events listed in section 2.6 | Legitimate interest, Art. 6(1)(f). You can object at any time, see section 2.6 |
 
 We do not process any special category data, and we do not use your data for automated decision-making with legal effects.
 
@@ -104,12 +126,13 @@ We use a small number of service providers ("processors"). They act on our instr
 | **Supabase, Inc.** (United States) | Hosts the accounts database, your collection, and our server functions | Project hosted in the EU (Paris, France) | Account data, collection data |
 | **RevenueCat, Inc.** (United States) | Tells the app whether your subscription is active, and validates App Store receipts | United States | Store transaction data, your account identifier, device information |
 | **Apple Inc.** | Sign in with Apple, App Store distribution, subscription payments | United States | Your Apple sign-in, your purchase |
+| **PostHog, Inc.** (United States) | Product analytics: tells us which screens are used and whether scans succeed | United States | The usage events listed in section 2.6, and your account identifier |
 
 No card-recognition provider appears in this table any more, and that is not an omission. Recognition used to run through two external providers when a device could not read a card; since August 2026 it runs only on your device, so there is nobody left to send an image to.
 
-**Transfers outside the European Union.** All three companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
+**Transfers outside the European Union.** All four companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
 
-Card images displayed in the app are loaded from the third-party CDN `static.dotgg.gg`, which receives your IP address as part of any ordinary image request.
+Card images displayed in the app are loaded from the third-party CDN `static.dotgg.gg`, and images of sets and sealed products from the third-party CDN `tcgplayer-cdn.tcgplayer.com`. Both receive your IP address as part of any ordinary image request. Neither is a processor acting on our instructions: they are simply the hosts your device requests an image from.
 
 **We never sell, rent or trade your data, and we never share it for advertising purposes.** We only disclose data where the law requires it.
 
@@ -124,6 +147,7 @@ Card images displayed in the app are loaded from the third-party CDN `static.dot
 | Subscription data at RevenueCat | For as long as RevenueCat needs it to recognise your subscription and honour a restore, in line with its own retention policy. A purchase record necessarily outlives a cancellation, otherwise restoring a subscription could not work. |
 | Technical logs of our server functions | Short-lived, in line with Supabase's own log retention. They contain error messages and technical metadata. |
 | The local copy on your device | Until you delete the app, or until you delete your account, which wipes it. |
+| Usage events at PostHog (section 2.6) | Kept while they are useful for reading trends. They are not stored with your account, so deleting your account does not automatically erase them: ask us and we will delete them. |
 
 ## 6. Deleting your account
 
@@ -165,7 +189,7 @@ If you believe your data is being handled improperly, you may lodge a complaint 
 To be explicit, because a lot of apps in this category do the opposite:
 
 - **No advertising.** Logbook shows no ads and contains no advertising SDK.
-- **No tracking.** No analytics, no attribution, no measurement SDK, no third-party tracker, no advertising identifier. We do not track you across apps or websites, and we do not ask you to allow tracking, because there is nothing to allow.
+- **No cross-app tracking.** No attribution SDK, no third-party tracker, no advertising identifier. We do not follow you into other apps or websites, and we do not ask you to allow tracking, because there is nothing to allow. We do measure how Logbook itself is used, which is a different thing, and section 2.6 is explicit about it.
 - **No profiling.** We do not build a profile of you and we do not enrich your data from other sources.
 - **No data sales.** We do not sell your data, and we will never make selling it part of the business model. If this ever changes, it will require your explicit prior consent, and a new version of this policy.
 - **No other use of your collection.** We store it so that you cannot lose it, and for nothing else: it is not shared with other users (Logbook has no social or publishing features), not published as market data, and not sold. Holding a backup does mean we are technically able to read it, as is true of any service that stores anything on your behalf, and we do not look at it beyond keeping the service working.
@@ -178,7 +202,7 @@ Logbook is not intended for children under 13, and we do not knowingly collect d
 
 We may update this policy as the app evolves. The date at the top always reflects the most recent version, and significant changes will be announced in the app before they take effect.
 
-The August 2026 version records two such changes. Card recognition became entirely on-device, so no photo is sent anywhere any more. And collections started being stored on your account rather than on the device alone, so we now hold a copy of something we previously did not.
+The August 2026 version records three such changes. Card recognition became entirely on-device, so no photo is sent anywhere any more. Collections started being stored on your account rather than on the device alone, so we now hold a copy of something we previously did not. And the app began measuring its own use, described in section 2.6, which an earlier version of this policy said it did not do: that sentence was true when it was written and is not any more, and replacing it rather than quietly deleting it is the point of this paragraph. You can object to the measurement at any time by writing to us, as section 2.6 explains.
 
 ## 11. Contact
 
