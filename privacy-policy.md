@@ -4,7 +4,7 @@ title: Privacy Policy — Logbook
 
 # Privacy Policy
 
-**Last updated: 12 August 2026**
+**Last updated: 27 August 2026**
 
 ## The short version
 
@@ -12,6 +12,7 @@ title: Privacy Policy — Logbook
 - **Your collection is stored on your account**, on our servers, so that it survives a reinstall or a new phone. No other user of Logbook can read it.
 - **Apart from your collection, the only thing we hold is your account:** your email address, and, if you use Sign in with Apple, the user identifier and the name Apple gives us.
 - **No advertising, no cross-app tracking, no data sold.** Logbook contains no advertising SDK and no advertising identifier, and it never follows you into other apps or websites.
+- **If you write to us from the app**, your message reaches us with your app version, your device model and the size of your collection attached, so that a bug report can be acted on. The screen says so before you send. Section 2.7.
 - **We do measure how the app itself is used**, with a product analytics tool called PostHog: which screens you open, whether a scan succeeded, how long it took. It is tied to your account identifier so we can tell a returning visitor from a new one, and it carries no email address, no name, and none of the prices you enter. You can ask us to stop at any time and we will. Section 2.6 lists exactly what it sends.
 
 The rest of this page explains the details.
@@ -95,6 +96,7 @@ Since August 2026, Logbook measures how it is used, so that we can tell which pa
 - **Scans**: that you took a picture, whether a card was recognised, how long recognition took, the card's code and set, and whether you corrected our answer. The photograph itself is never part of this and never leaves your phone (section 2.2 is unchanged).
 - **Your collection changing**: that a card or a sealed product was added or removed, which one it was, and whether you recorded a purchase price.
 - **The paywall**: that it was shown, which plan was highlighted, and whether a purchase completed, was cancelled or failed. The amount is the App Store's own public price for the plan, not a payment detail.
+- **Leaving for Cardmarket**: that you tapped the source line under a price to open that card's listing, which card it was, and which edition you were looking at. We record it because we need to know whether the link is worth keeping, and whether we sent you to the right listing or only to a search. Cardmarket is not told that you came from Logbook, and it receives nothing about you from us: the tap simply opens your browser on a public page.
 - **Your account identifier**, so that two visits by the same person are not counted as two people. It is the same identifier described in section 2.1.
 - **Which version of the app** you are running, and whether it is a test build.
 
@@ -103,6 +105,45 @@ Since August 2026, Logbook measures how it is used, so that we can tell which pa
 **Why we do this.** Legitimate interest, Art. 6(1)(f): a project this small cannot otherwise tell whether the scanner works on real cards, or whether people give up before their first one. We have kept the data minimal precisely so that this basis is honest, and we treat it as measurement of the product rather than knowledge about you.
 
 **How to object.** Because this rests on legitimate interest and not on your consent, you have the right to object to it (GDPR Art. 21). Write to **logbook.ugc@gmail.com** and we will stop collecting these events for your account and delete the ones already recorded. There is no switch inside the app: the app does not ask you, and it does not let you turn it off by yourself.
+
+### 2.7 Feedback you send us
+
+Settings has a **Send feedback** screen where you can report a bug, tell us a card or a price is wrong, or suggest something. Nothing here is collected unless you write a message and tap send.
+
+**What is sent:**
+
+- **Your message**, exactly as you wrote it, and which of the three kinds you picked.
+- **Your account identifier**, so that we can reply to you and so that deleting your account also deletes what you sent (see section 5).
+- **Context about your app and your phone**, gathered automatically so that a report is actually actionable: the app version and build number, whether it is a test build, your device model, its operating system version, and the language the app was displaying.
+- **The size of your collection**: how many cards and how many sealed products you hold, and whether you have reached the limit of the free tier. This is what lets us tell a real bug from a limit working as designed. It is a count, never a list of what you own.
+
+The screen states all of this on itself, above the send button, before you send anything.
+
+**What is never sent.** Your photographs. Your cards themselves. Any price you entered for something you own. Your location.
+
+**Where it goes.** The message is stored in our database (section 4, Supabase) and a copy is emailed to us so that we read it. The email is delivered by **Resend**, and it carries your email address in its reply-to field, which is what lets us answer you directly. If you would rather write to us without any of this context attached, email **logbook.ugc@gmail.com** instead: it reaches the same person.
+
+**Why we do this.** Legitimate interest, Art. 6(1)(f): we cannot fix what we are not told about, and a report without a version number and a device model usually cannot be acted on at all. You are never asked for feedback and never prompted for it: every message here exists because somebody chose to write it.
+
+### 2.8 Prices you report as wrong
+
+Every card in the app carries a market price we did not set: it comes from Cardmarket, matched to the card by us, and the matching is sometimes wrong. On a card's price, the **?** opens a sheet explaining where the figure comes from, and at the bottom of that sheet you can tell us the price looks wrong. Nothing here is collected unless you pick a reason and tap send.
+
+**What is sent:**
+
+- **What you said is wrong with it**: which of the four reasons you picked, what you think the card is roughly worth if you chose to say, and your message if you wrote one.
+- **Which card**, so that we know what to check: its code, its printing, and which of the two Cardmarket editions was on your screen.
+- **The price we were showing you and where we got it**: the figures displayed, the Cardmarket listing we had matched the card to, whether that match was an estimate, and the date of the price file your app was using. This is what lets us reproduce what you saw instead of guessing at it, and it is the whole reason this form exists separately from the one in section 2.7.
+- **Your account identifier**, so that we can come back to you if we need to and so that deleting your account also deletes what you sent (see section 5).
+- **Context about your app and your phone**, exactly as listed in section 2.7: app version and build number, whether it is a test build, device model, operating system version, and the language the app was displaying.
+
+The sheet states all of this on itself, above the send button, before you send anything.
+
+**What is never sent.** Your collection. Your photographs. Any price you entered for something you own. Your location. The figure you give us here is what you think a card is worth on the open market, which is a public fact about a product; it is not, and is never confused with, what you paid.
+
+**Where it goes.** The report is stored in our database (section 4, Supabase) and a copy is emailed to us by **Resend**, exactly as feedback is.
+
+**Why we do this.** Legitimate interest, Art. 6(1)(f): a price we display wrongly is a defect in the product, and users holding the actual cards are the only people who can catch a whole class of them. A report without the card and the price file it came from cannot be acted on at all. You are never asked to report a price and never prompted to: every report here exists because somebody went looking for the form.
 
 ## 3. Why we process it, and on what legal basis
 
@@ -114,6 +155,8 @@ Since August 2026, Logbook measures how it is used, so that we can tell which pa
 | Selling a subscription, and recognising it on your other devices | Store transaction data, your account identifier | Performance of a contract, Art. 6(1)(b) |
 | Keeping the service available and secure (technical logs, abuse prevention) | Technical connection data | Legitimate interest, Art. 6(1)(f) |
 | Understanding how the app is used, so we can improve it | The usage events listed in section 2.6 | Legitimate interest, Art. 6(1)(f). You can object at any time, see section 2.6 |
+| Reading and answering feedback you send us | The message and context listed in section 2.7 | Legitimate interest, Art. 6(1)(f) |
+| Correcting the prices we display when a user reports one as wrong | The report and context listed in section 2.8 | Legitimate interest, Art. 6(1)(f) |
 
 We do not process any special category data, and we do not use your data for automated decision-making with legal effects.
 
@@ -127,10 +170,11 @@ We use a small number of service providers ("processors"). They act on our instr
 | **RevenueCat, Inc.** (United States) | Tells the app whether your subscription is active, and validates App Store receipts | United States | Store transaction data, your account identifier, device information |
 | **Apple Inc.** | Sign in with Apple, App Store distribution, subscription payments | United States | Your Apple sign-in, your purchase |
 | **PostHog, Inc.** (United States) | Product analytics: tells us which screens are used and whether scans succeed | United States | The usage events listed in section 2.6, and your account identifier |
+| **Resend (Plus Five Five, Inc.)** (United States) | Delivers the notification email when you send feedback, or report a price, from the app | United States | The feedback message and context listed in section 2.7, the price report listed in section 2.8, and your email address |
 
 No card-recognition provider appears in this table any more, and that is not an omission. Recognition used to run through two external providers when a device could not read a card; since August 2026 it runs only on your device, so there is nobody left to send an image to.
 
-**Transfers outside the European Union.** All four companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
+**Transfers outside the European Union.** All five companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
 
 Card images displayed in the app are loaded from the third-party CDN `static.dotgg.gg`, and images of sets and sealed products from the third-party CDN `tcgplayer-cdn.tcgplayer.com`. Both receive your IP address as part of any ordinary image request. Neither is a processor acting on our instructions: they are simply the hosts your device requests an image from.
 
@@ -147,6 +191,8 @@ Card images displayed in the app are loaded from the third-party CDN `static.dot
 | Subscription data at RevenueCat | For as long as RevenueCat needs it to recognise your subscription and honour a restore, in line with its own retention policy. A purchase record necessarily outlives a cancellation, otherwise restoring a subscription could not work. |
 | Technical logs of our server functions | Short-lived, in line with Supabase's own log retention. They contain error messages and technical metadata. |
 | The local copy on your device | Until you delete the app, or until you delete your account, which wipes it. |
+| Feedback you sent (section 2.7) | For as long as your account exists: the record is attached to your account and is deleted with it. The notification email we received is a separate copy and stays in our mailbox, like any email anybody sends us. |
+| Price reports you sent (section 2.8) | The same, and for the same reason: the record is attached to your account and is deleted with it, and the notification email is a separate copy that stays in our mailbox. |
 | Usage events at PostHog (section 2.6) | Kept while they are useful for reading trends. They are not stored with your account, so deleting your account does not automatically erase them: ask us and we will delete them. |
 
 ## 6. Deleting your account
@@ -155,7 +201,7 @@ You can delete your account from inside the app, in **Settings → Account → D
 
 Deleting your account:
 
-- permanently deletes your account and everything attached to it from our servers: email, password hash, Apple identifier, name, Apple refresh token, and your collection, your sealed products and your wishlist;
+- permanently deletes your account and everything attached to it from our servers: email, password hash, Apple identifier, name, Apple refresh token, your collection, your sealed products, your wishlist, and any feedback or price report you sent from the app;
 - revokes Logbook's Sign in with Apple authorisation with Apple, where applicable;
 - **wipes your collection, your sealed products, your wishlist and all locally cached data from the device you are signed in on.**
 
@@ -202,7 +248,7 @@ Logbook is not intended for children under 13, and we do not knowingly collect d
 
 We may update this policy as the app evolves. The date at the top always reflects the most recent version, and significant changes will be announced in the app before they take effect.
 
-The August 2026 version records three such changes. Card recognition became entirely on-device, so no photo is sent anywhere any more. Collections started being stored on your account rather than on the device alone, so we now hold a copy of something we previously did not. And the app began measuring its own use, described in section 2.6, which an earlier version of this policy said it did not do: that sentence was true when it was written and is not any more, and replacing it rather than quietly deleting it is the point of this paragraph. You can object to the measurement at any time by writing to us, as section 2.6 explains.
+The August 2026 version records four such changes. Card recognition became entirely on-device, so no photo is sent anywhere any more. Collections started being stored on your account rather than on the device alone, so we now hold a copy of something we previously did not. And the app began measuring its own use, described in section 2.6, which an earlier version of this policy said it did not do: that sentence was true when it was written and is not any more, and replacing it rather than quietly deleting it is the point of this paragraph. You can object to the measurement at any time by writing to us, as section 2.6 explains. And the app gained a feedback screen, described in section 2.7: it collects nothing unless you write a message and send it, and the screen itself lists what travels with it before you do. That is the announcement this paragraph would otherwise owe you: there is no way to reach it by accident. A second form of the same kind was added at the end of August, described in section 2.8: it lets you tell us a card's price is wrong, it sits behind the **?** on that card's price, and it too collects nothing unless you fill it in and send it. It carries more than the feedback screen does, because a price we cannot reproduce is a price we cannot fix, and section 2.8 lists every field of it.
 
 ## 11. Contact
 
