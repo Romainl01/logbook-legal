@@ -4,7 +4,8 @@ title: Terms of Service — Logbook
 
 # Terms of Service
 
-**Last updated: 11 August 2026**
+
+**Last updated: 3 September 2026**
 
 ## 1. Who we are, and what these terms cover
 
@@ -25,6 +26,8 @@ Logbook is a **catalogue and tracking tool**. It is not a marketplace, a broker,
 **Logbook is free up to the first ten items in your collection, and requires a subscription above that.** The subscription is not a set of extra features: it removes the ceiling, and everything the app does is available below it. Be aware that the ceiling applies to scanning too, not only to storing: once you reach it, the scanner stops identifying new cards until you subscribe.
 
 The subscription is sold and billed by **Apple**, through your App Store account, and renews automatically until you cancel it. The price and the billing period are shown to you on the purchase screen before you buy, in your own currency. You cancel it in your Apple account settings, not here, and cancelling stops the next renewal rather than the period you have already paid for. If you cancel, anything past your first ten items is hidden until you subscribe again; nothing is deleted.
+
+**Some plans start with a free trial.** When one does, the purchase screen says so, along with how long it lasts and what you are charged when it ends. The trial converts into a paid subscription automatically unless you cancel before it runs out, and cancelling during the trial costs you nothing. Apple allows **one introductory offer per Apple ID per subscription group**, so if you have already used a free trial or an introductory price for Logbook, you will not be offered another one, whatever the purchase screen of a later version happens to show; Apple's own payment sheet is what decides, and it always states the terms you are actually agreeing to.
 
 ## 3. Your account
 

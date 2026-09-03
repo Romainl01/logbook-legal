@@ -4,7 +4,7 @@ title: Privacy Policy — Logbook
 
 # Privacy Policy
 
-**Last updated: 27 August 2026**
+**Last updated: 31 August 2026**
 
 ## The short version
 
@@ -97,6 +97,7 @@ Since August 2026, Logbook measures how it is used, so that we can tell which pa
 - **Your collection changing**: that a card or a sealed product was added or removed, which one it was, and whether you recorded a purchase price.
 - **The paywall**: that it was shown, which plan was highlighted, and whether a purchase completed, was cancelled or failed. The amount is the App Store's own public price for the plan, not a payment detail.
 - **Leaving for Cardmarket**: that you tapped the source line under a price to open that card's listing, which card it was, and which edition you were looking at. We record it because we need to know whether the link is worth keeping, and whether we sent you to the right listing or only to a search. Cardmarket is not told that you came from Logbook, and it receives nothing about you from us: the tap simply opens your browser on a public page.
+- **The rating question in Settings**: which of the two thumbs you tapped, and nothing else. We record it to see whether an unhappy answer actually turns into a message, so that we know if the form is worth keeping where it is. It is not a rating and it never reaches Apple: a review you write on the App Store is between you and Apple, and we cannot connect it to you here.
 - **Your account identifier**, so that two visits by the same person are not counted as two people. It is the same identifier described in section 2.1.
 - **Which version of the app** you are running, and whether it is a test build.
 
