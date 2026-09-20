@@ -4,7 +4,7 @@ title: Privacy Policy — Logbook
 
 # Privacy Policy
 
-**Last updated: 31 August 2026**
+**Last updated: 20 September 2026**
 
 ## The short version
 
@@ -13,6 +13,7 @@ title: Privacy Policy — Logbook
 - **Apart from your collection, the only thing we hold is your account:** your email address, and, if you use Sign in with Apple, the user identifier and the name Apple gives us.
 - **No advertising, no cross-app tracking, no data sold.** Logbook contains no advertising SDK and no advertising identifier, and it never follows you into other apps or websites.
 - **If you write to us from the app**, your message reaches us with your app version, your device model and the size of your collection attached, so that a bug report can be acted on. The screen says so before you send. Section 2.7.
+- **If you ask to be told when a card reaches a price**, your phone gives us a notification token so that we can reach it while the app is closed. That token identifies the installation, not you personally, and it is the only reason we hold it. We never use notifications for advertising, and turning them off in iOS deletes nothing but our ability to reach you. Section 2.9.
 - **We do measure how the app itself is used**, with a product analytics tool called PostHog: which screens you open, whether a scan succeeded, how long it took. It is tied to your account identifier so we can tell a returning visitor from a new one, and it carries no email address, no name, and none of the prices you enter. You can ask us to stop at any time and we will. Section 2.6 lists exactly what it sends.
 
 The rest of this page explains the details.
@@ -93,13 +94,15 @@ Since August 2026, Logbook measures how it is used, so that we can tell which pa
 **What is sent.** One short record per meaningful action, carrying only what is needed to count it:
 
 - **Screens you open**, named after the app's own routes (`/cards`, `/dashboard`).
-- **Scans**: that you took a picture, whether a card was recognised, how long recognition took, the card's code and set, and whether you corrected our answer. The photograph itself is never part of this and never leaves your phone (section 2.2 is unchanged).
+- **Scans**: that you took a picture, whether a card was recognised, how long recognition took, the card's code and set, and whether you corrected our answer. When a card is **not** recognised, we also send why the reading failed — whether any text was found at all, how confident the recogniser was, and, if we read something shaped like a card code but could not match it to a card, that code. It lets us tell a blurred photo from a card missing from our catalogue. Since September 2026 we also send **how much light the camera had** at the moment you pressed the shutter — the exposure the lens settled on, and how much headroom the sensor had left — plus whether the torch was on and whether we had suggested turning it on. These are properties of the camera, of the same kind as a loading time; they describe the light in front of the lens and not the room you are in, and there is no image behind them. We send them because the scanner's own suggestion to turn the torch on has been wrong on every scan we could check, and the only way to place it correctly is to compare the light against whether the card was actually read. The photograph itself is never part of this and never leaves your phone (section 2.2 is unchanged).
 - **Your collection changing**: that a card or a sealed product was added or removed, which one it was, and whether you recorded a purchase price.
 - **The paywall**: that it was shown, which plan was highlighted, and whether a purchase completed, was cancelled or failed. The amount is the App Store's own public price for the plan, not a payment detail.
-- **Leaving for Cardmarket**: that you tapped the source line under a price to open that card's listing, which card it was, and which edition you were looking at. We record it because we need to know whether the link is worth keeping, and whether we sent you to the right listing or only to a search. Cardmarket is not told that you came from Logbook, and it receives nothing about you from us: the tap simply opens your browser on a public page.
+- **Leaving for the marketplace**: that you tapped the buy line under a price to open that card's listing, which card it was, and which edition you were looking at. Which marketplace that is depends on the one you chose in Settings — **Cardmarket** or **TCGplayer**. We record it because we need to know whether the link is worth keeping, and whether we sent you to the right listing or only to a search. Neither marketplace is told that you came from Logbook, and neither receives anything about you from us: the tap simply opens your browser on a public page.
 - **The rating question in Settings**: which of the two thumbs you tapped, and nothing else. We record it to see whether an unhappy answer actually turns into a message, so that we know if the form is worth keeping where it is. It is not a rating and it never reaches Apple: a review you write on the App Store is between you and Apple, and we cannot connect it to you here.
+- **Notifications**: that we showed you our own explanation screen before iOS asked, that the iOS question was asked, and what you answered. We record this because the iOS question can only be asked once in the life of an installation, so where we ask it is a decision we have to be able to judge.
+- **Price alerts**: that you armed or removed an alert, whether it watches a rise or a fall, **how far your threshold sits from the price you were looking at, as a percentage**, which marketplace and which edition it was frozen against, and whether you opened the notification when it arrived. **The amount you typed is never sent**: a threshold is a figure you chose, and it is treated exactly like a purchase price — the percentage answers the same question about the product without carrying your number.
 - **Your account identifier**, so that two visits by the same person are not counted as two people. It is the same identifier described in section 2.1.
-- **Which version of the app** you are running, and whether it is a test build.
+- **Which version of the app** you are running, whether it is a test build, and **which of the two marketplaces you chose** to see prices from. That last one is a setting, not a fact about you: it is what lets us read every measurement above separately for European and American users, which is the whole reason the choice exists.
 
 **What is never sent.** Your email address. Your name. The prices you enter for your own cards, whether you paid them or sold at them: those are sent as "a price was recorded", never as a figure. The total value of your collection leaves only as a broad band (for example "250 to 1000 euros"), never as an amount. No photograph, no advertising identifier, and nothing that follows you into another app.
 
@@ -146,6 +149,29 @@ The sheet states all of this on itself, above the send button, before you send a
 
 **Why we do this.** Legitimate interest, Art. 6(1)(f): a price we display wrongly is a defect in the product, and users holding the actual cards are the only people who can catch a whole class of them. A report without the card and the price file it came from cannot be acted on at all. You are never asked to report a price and never prompted to: every report here exists because somebody went looking for the form.
 
+### 2.9 Notifications
+
+Since September 2026, Logbook can tell you when a card reaches a price you chose. This only happens for cards you asked us to watch: there is no notification you did not ask for, and none of them is advertising.
+
+To reach your phone while the app is closed, we have to hold three things about the installation itself.
+
+**What is sent:**
+
+- **A notification token.** It is issued by Apple, through Expo, and it identifies **the installation of the app on that phone** — not you as a person. It is the address your device answers at; without it no notification can be delivered. It changes when you reinstall the app, and it stops working when you delete it.
+- **The time zone of your phone**, refreshed each time you open the app. It exists for one reason: we never send anything before 9am or after 9pm, and the only clock that matters is the one in your pocket. Without it we would be sending on a server's hours, which for some of you would mean the middle of the night.
+- **The language the app is displaying**, for the same kind of reason: the notification's text is written on our servers, not in the app, so without this it would arrive in English on a French phone.
+- **Whether each kind of notification is on**, as you set it in Logbook's own Settings. Price alerts are decided on our servers, so that switch has to travel with the token — otherwise turning it off would change what the app says and not what the app does.
+
+**What a notification itself carries.** The card's code, and which way its price moved. **Never a figure**: not your threshold, not the price. That is a deliberate product decision and not an oversight — the app shows prices on a marketplace, a price basis and an edition that you chose and that live only on your phone, so any amount we wrote on your lock screen could contradict the one you read three seconds later when you opened the app.
+
+**What is never sent.** Your email address, your name, your collection, your location. A notification token is not an advertising identifier: it cannot be read by any other app, it identifies nothing outside Logbook, and we never share it with anyone but the delivery services below.
+
+**Where it goes.** The token is stored in our database (section 4, Supabase). To deliver a notification we hand it to **Expo**, whose push service relays it to **Apple's Push Notification service**, which delivers it to your phone. Expo therefore sees the token and the text of the notification; it sees no account of yours, because we identify the device and never the person.
+
+**How to stop it.** Turn the switches off in Logbook's **Settings → Notifications**, or turn Logbook's notifications off in iOS Settings, which overrides everything. **Signing out releases the token immediately**, so a phone you have signed out of stops receiving anything for that account — this matters on a shared device. Deleting your account deletes the token with it. And because iOS only ever asks the question once, refusing it the first time is a definitive answer as far as the app is concerned: only a trip to iOS Settings can reopen it.
+
+**Why we do this.** Performance of the service you asked for, Art. 6(1)(b): an alert you armed yourself cannot be delivered without an address to deliver it to.
+
 ## 3. Why we process it, and on what legal basis
 
 | Purpose | Data | Legal basis (GDPR Art. 6) |
@@ -158,6 +184,7 @@ The sheet states all of this on itself, above the send button, before you send a
 | Understanding how the app is used, so we can improve it | The usage events listed in section 2.6 | Legitimate interest, Art. 6(1)(f). You can object at any time, see section 2.6 |
 | Reading and answering feedback you send us | The message and context listed in section 2.7 | Legitimate interest, Art. 6(1)(f) |
 | Correcting the prices we display when a user reports one as wrong | The report and context listed in section 2.8 | Legitimate interest, Art. 6(1)(f) |
+| Telling you when a card you asked us to watch reaches your price | The notification token, time zone and language listed in section 2.9 | Performance of a contract, Art. 6(1)(b): the alert is the service you asked for |
 
 We do not process any special category data, and we do not use your data for automated decision-making with legal effects.
 
@@ -172,10 +199,11 @@ We use a small number of service providers ("processors"). They act on our instr
 | **Apple Inc.** | Sign in with Apple, App Store distribution, subscription payments | United States | Your Apple sign-in, your purchase |
 | **PostHog, Inc.** (United States) | Product analytics: tells us which screens are used and whether scans succeed | United States | The usage events listed in section 2.6, and your account identifier |
 | **Resend (Plus Five Five, Inc.)** (United States) | Delivers the notification email when you send feedback, or report a price, from the app | United States | The feedback message and context listed in section 2.7, the price report listed in section 2.8, and your email address |
+| **Expo (650 Industries, Inc.)** (United States) | Relays a price-alert notification from our servers to Apple's Push Notification service | United States | The notification token described in section 2.9, and the text of the notification. No account of yours: we address the device, never the person |
 
 No card-recognition provider appears in this table any more, and that is not an omission. Recognition used to run through two external providers when a device could not read a card; since August 2026 it runs only on your device, so there is nobody left to send an image to.
 
-**Transfers outside the European Union.** All five companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
+**Transfers outside the European Union.** All six companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
 
 Card images displayed in the app are loaded from the third-party CDN `static.dotgg.gg`, and images of sets and sealed products from the third-party CDN `tcgplayer-cdn.tcgplayer.com`. Both receive your IP address as part of any ordinary image request. Neither is a processor acting on our instructions: they are simply the hosts your device requests an image from.
 
@@ -194,6 +222,7 @@ Card images displayed in the app are loaded from the third-party CDN `static.dot
 | The local copy on your device | Until you delete the app, or until you delete your account, which wipes it. |
 | Feedback you sent (section 2.7) | For as long as your account exists: the record is attached to your account and is deleted with it. The notification email we received is a separate copy and stays in our mailbox, like any email anybody sends us. |
 | Price reports you sent (section 2.8) | The same, and for the same reason: the record is attached to your account and is deleted with it, and the notification email is a separate copy that stays in our mailbox. |
+| Notification token, time zone and language (section 2.9) | For as long as your account exists, and only while the installation is alive and signed in: signing out releases it. A token that Apple tells us no longer exists — you deleted the app, or turned notifications off at the system level — is marked dead and stops being used. Deleting your account deletes it. |
 | Usage events at PostHog (section 2.6) | Kept while they are useful for reading trends. They are not stored with your account, so deleting your account does not automatically erase them: ask us and we will delete them. |
 
 ## 6. Deleting your account
@@ -236,7 +265,8 @@ If you believe your data is being handled improperly, you may lodge a complaint 
 To be explicit, because a lot of apps in this category do the opposite:
 
 - **No advertising.** Logbook shows no ads and contains no advertising SDK.
-- **No cross-app tracking.** No attribution SDK, no third-party tracker, no advertising identifier. We do not follow you into other apps or websites, and we do not ask you to allow tracking, because there is nothing to allow. We do measure how Logbook itself is used, which is a different thing, and section 2.6 is explicit about it.
+- **No notification you did not ask for.** Since September 2026 Logbook can notify you, and it only ever does so about a card you personally asked it to watch, at a price you personally typed. No promotion, no "come back", no advertising. Section 2.9 lists what a notification carries — and, as importantly, that it never carries a figure.
+- **No cross-app tracking.** No attribution SDK, no third-party tracker, no advertising identifier. A notification token is not one of those: it is an address your own device answers at, it means nothing to any other app, and it identifies the installation rather than you. We do not follow you into other apps or websites, and we do not ask you to allow tracking, because there is nothing to allow. We do measure how Logbook itself is used, which is a different thing, and section 2.6 is explicit about it.
 - **No profiling.** We do not build a profile of you and we do not enrich your data from other sources.
 - **No data sales.** We do not sell your data, and we will never make selling it part of the business model. If this ever changes, it will require your explicit prior consent, and a new version of this policy.
 - **No other use of your collection.** We store it so that you cannot lose it, and for nothing else: it is not shared with other users (Logbook has no social or publishing features), not published as market data, and not sold. Holding a backup does mean we are technically able to read it, as is true of any service that stores anything on your behalf, and we do not look at it beyond keeping the service working.
@@ -248,6 +278,8 @@ Logbook is not intended for children under 13, and we do not knowingly collect d
 ## 10. Changes to this policy
 
 We may update this policy as the app evolves. The date at the top always reflects the most recent version, and significant changes will be announced in the app before they take effect.
+
+**The September 2026 version records one change: the app can now send you notifications.** It could not before, and an earlier version of this policy did not mention them at all. What is new on our side is that we hold a notification token — an identifier for the installation of the app on your phone — together with your time zone and the app's language, and that a sixth processor (Expo) appears in section 4 because it is what relays a notification to Apple. Section 2.9 describes all of it, including the two things it is worth knowing without reading it: we never send anything before 9am or after 9pm in your own time zone, and a notification never carries a price figure. Nothing here happens unless you arm an alert yourself, and iOS asks its own question before any of it is possible.
 
 The August 2026 version records four such changes. Card recognition became entirely on-device, so no photo is sent anywhere any more. Collections started being stored on your account rather than on the device alone, so we now hold a copy of something we previously did not. And the app began measuring its own use, described in section 2.6, which an earlier version of this policy said it did not do: that sentence was true when it was written and is not any more, and replacing it rather than quietly deleting it is the point of this paragraph. You can object to the measurement at any time by writing to us, as section 2.6 explains. And the app gained a feedback screen, described in section 2.7: it collects nothing unless you write a message and send it, and the screen itself lists what travels with it before you do. That is the announcement this paragraph would otherwise owe you: there is no way to reach it by accident. A second form of the same kind was added at the end of August, described in section 2.8: it lets you tell us a card's price is wrong, it sits behind the **?** on that card's price, and it too collects nothing unless you fill it in and send it. It carries more than the feedback screen does, because a price we cannot reproduce is a price we cannot fix, and section 2.8 lists every field of it.
 
