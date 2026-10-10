@@ -9,7 +9,8 @@ title: Privacy Policy — Logbook
 ## The short version
 
 - **Your phone reads your cards first.** Logbook reads the card code on the device itself, using Apple's on-device text recognition, and a card read this way never leaves your phone. **Only when your phone cannot read a card** is its photo sent to a card-recognition service, CardSight AI, to identify it. The photo is not stored on our servers and is not attached to your account. Section 2.2.
-- **Your collection is stored on your account**, on our servers, so that it survives a reinstall or a new phone. No other user of Logbook can read it.
+- **Your collection is stored on your account**, on our servers, so that it survives a reinstall or a new phone. No other user of Logbook can read it, **unless you create a public profile to share it**.
+- **If you share your collection**, you choose a nickname and a photo, and anyone holding your link sees that nickname, that photo and your cards, never what you paid for them. A photo you add is checked by an automated moderation service (OpenAI) before it is published. You can make your account private or cancel the link at any time. Section 2.10.
 - **Apart from your collection, the only thing we hold is your account:** your email address, and, if you use Sign in with Apple, the user identifier and the name Apple gives us.
 - **No advertising, no cross-app tracking, no data sold.** Logbook contains no advertising SDK and no advertising identifier, and it never follows you into other apps or websites.
 - **If you write to us from the app**, your message reaches us with your app version, your device model and the size of your collection attached, so that a bug report can be acted on. The screen says so before you send. Section 2.7.
@@ -66,7 +67,7 @@ Once you are signed in, your collection is stored on your account, on our server
 
 **Why we do this.** Your collection survives a reinstall, a lost phone or a new device: you sign in and it comes back. This is a change made in August 2026. Before it, the collection existed only on the device and nothing could recover it.
 
-**What it means for your privacy.** We hold a copy. Your rows are locked to your account in the database itself, so no other user of Logbook can read them, and we use them for nothing other than giving them back to you. They are deleted when you delete your account (section 6).
+**What it means for your privacy.** We hold a copy. Your rows are locked to your account in the database itself, so no other user of Logbook can read them, and we use them for nothing other than giving them back to you — with one exception you control: if you create a public profile, the cards and sealed products on your shared page are read from these rows, as section 2.10 describes. They are deleted when you delete your account (section 6).
 
 The price data is a separate matter and says nothing about you: the app downloads the same public price file as everybody else and caches it on your device.
 
@@ -182,6 +183,38 @@ To reach your phone while the app is closed, we have to hold three things about 
 
 **Why we do this.** Performance of the service you asked for, Art. 6(1)(b): an alert you armed yourself cannot be delivered without an address to deliver it to.
 
+### 2.10 Your public profile and shared collection
+
+Since October 2026, you can share your collection with a link. **Nothing is shared until you create a public profile**, and creating one is optional: the rest of the app works the same without it.
+
+**What you give us.**
+
+- **A nickname**, which you choose (3 to 20 characters). If you skip the step, we generate one for you of the form `nakama-1234`. It is unique across Logbook and it is public: it is the name on your page.
+- **A profile picture**, which is either one of the pirate illustrations that ship with the app, or a photo you choose from your library. When you choose a photo, the app only receives that one image, resized on your phone to 512 pixels; it does not get access to the rest of your library.
+
+**The photo is checked before it is published.** A photo you add is sent from our server to **OpenAI's moderation service** (section 4), which tells us whether it contains violent, sexual or otherwise inappropriate content. That is its only use: it is sent without your name, your email or your account identifier, and under OpenAI's terms for its API, what we send is not used to train its models. **A photo that is refused is not stored anywhere**, and if the moderation service cannot be reached, the photo is not published either: you are asked to try again. An accepted photo is stored on our servers under a random file name that does not contain your account identifier.
+
+**What anyone with your link can see.** Your page lives at `logbooktcg.com/c/` followed by a random code that we generate. It can be opened in the Logbook app by a signed-in user, or in any web browser, by **anyone who has the link**, so treat it the way you would treat any link you post. It shows:
+
+- your nickname and your profile picture;
+- your cards (which printing, which language, how many) and your unopened sealed products (which product, which language, how many), in the order you added them;
+- the market value of what is shown, worked out from the same public price file as everywhere else in the app.
+
+**What it never shows**: your email, your Apple name, your account identifier, the price you paid for anything, whether you bought or pulled a card, its condition or grade, your wishlist, and products you have opened. Our server only ever releases the fields listed above; the rest never leaves the database.
+
+The page is marked so that search engines do not index it, and the code in the link is long enough that it cannot reasonably be guessed. It is still a public page: anyone you send the link to can forward it.
+
+**How to control it.**
+
+- **Private account.** In your profile or in **Settings**, turn on *Private account*. Your page then shows only your nickname and your profile picture, and no card at all. Your link keeps working.
+- **Cancelling the link.** In **Settings**, you can cancel your link. Anyone who opens the old link then sees that the collection is no longer available, and sharing again creates a new link with a new code.
+- **Changing your nickname or photo.** At any time, from your profile. Replacing a photo with a pirate illustration deletes the photo from our servers.
+- **Subscription.** If your subscription ends and your collection holds more items than the free plan allows, your page stops being shown until you subscribe again or come back within the free limit.
+
+**Reporting a page.** A signed-in user can report someone else's page from the app, with an optional reason (up to 1,000 characters). We record who reported which page, when, and the reason, and we receive it by email so that a person reviews it. The page owner is not told who reported them. We may remove a nickname or photo that breaks our terms.
+
+**On the website.** The page is served by our hosting provider, Vercel (section 4). Like any web server, it receives the visitor's IP address in order to answer; we use it only to limit how many pages a single address can request per minute, and we do not record it ourselves; Vercel's own request logs keep it briefly, under its policy. What our server records about visits is described at the end of section 2.6.
+
 ## 3. Why we process it, and on what legal basis
 
 | Purpose | Data | Legal basis (GDPR Art. 6) |
@@ -194,6 +227,8 @@ To reach your phone while the app is closed, we have to hold three things about 
 | Understanding how the app is used, so we can improve it | The usage events listed in section 2.6 | Legitimate interest, Art. 6(1)(f). You can object at any time, see section 2.6 |
 | Reading and answering feedback you send us | The message and context listed in section 2.7 | Legitimate interest, Art. 6(1)(f) |
 | Correcting the prices we display when a user reports one as wrong | The report and context listed in section 2.8 | Legitimate interest, Art. 6(1)(f) |
+| Showing your public profile and shared collection to the people who have your link | Nickname, profile picture, and the collection data listed in section 2.10 | Performance of a contract, Art. 6(1)(b): sharing is a feature you switch on |
+| Checking a profile photo before publishing it, and handling reports | The photo, and the report listed in section 2.10 | Legitimate interest, Art. 6(1)(f): keeping public pages free of inappropriate content, and meeting App Store requirements for user-generated content |
 | Telling you when a card you asked us to watch reaches your price | The notification token, time zone and language listed in section 2.9 | Performance of a contract, Art. 6(1)(b): the alert is the service you asked for |
 
 We do not process any special category data, and we do not use your data for automated decision-making with legal effects.
@@ -204,15 +239,17 @@ We use a small number of service providers ("processors"). They act on our instr
 
 | Provider | Role | Where | Data involved |
 |---|---|---|---|
-| **Supabase, Inc.** (United States) | Hosts the accounts database, your collection, and our server functions | Project hosted in the EU (Paris, France) | Account data, collection data |
+| **Supabase, Inc.** (United States) | Hosts the accounts database, your collection, your public profile and profile photo, and our server functions | Project hosted in the EU (Paris, France) | Account data, collection data, nickname and profile photo |
 | **RevenueCat, Inc.** (United States) | Tells the app whether your subscription is active, and validates App Store receipts | United States | Store transaction data, your account identifier, device information |
 | **Apple Inc.** | Sign in with Apple, App Store distribution, subscription payments | United States | Your Apple sign-in, your purchase |
 | **PostHog, Inc.** (United States) | Product analytics: tells us which screens are used and whether scans succeed | United States | The usage events listed in section 2.6, and your account identifier |
-| **Resend (Plus Five Five, Inc.)** (United States) | Delivers the notification email when you send feedback, or report a price, from the app | United States | The feedback message and context listed in section 2.7, the price report listed in section 2.8, and your email address |
+| **Resend (Plus Five Five, Inc.)** (United States) | Delivers the notification email when you send feedback, report a price, or report a shared page, from the app | United States | The feedback message and context listed in section 2.7, the price report listed in section 2.8, the page report listed in section 2.10, and your email address |
 | **CardSight AI, Inc.** (United States) | Recognises a card from a photo when your phone could not read it (section 2.2) | United States | The photo of the card, sent without your name, email or account identifier |
+| **OpenAI, L.L.C.** (United States) | Checks a profile photo for inappropriate content before it is published (section 2.10) | United States | The photo you chose, sent without your name, email or account identifier. A refused photo is not stored by us |
+| **Vercel Inc.** (United States) | Hosts our website, including the shared collection pages (section 2.10) | United States, served from the network location nearest the visitor | The visitor's IP address, as for any website; the content of a shared page while it is being displayed |
 | **Expo (650 Industries, Inc.)** (United States) | Relays a price-alert notification from our servers to Apple's Push Notification service | United States | The notification token described in section 2.9, and the text of the notification. No account of yours: we address the device, never the person |
 
-**Transfers outside the European Union.** All seven companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
+**Transfers outside the European Union.** All nine companies above are established in the United States. Our Supabase project itself runs in the European Union (Paris), so your account and your collection are stored on EU servers, but Supabase's American parent company can access them for support and operations. Subscription data goes to RevenueCat in the United States. Those transfers are covered by the standard contractual clauses and safeguards published by each of those providers.
 
 Card images displayed in the app are loaded from the third-party CDN `static.dotgg.gg`, and images of sets and sealed products from the third-party CDN `tcgplayer-cdn.tcgplayer.com`. Both receive your IP address as part of any ordinary image request. Neither is a processor acting on our instructions: they are simply the hosts your device requests an image from.
 
@@ -225,7 +262,10 @@ Card images displayed in the app are loaded from the third-party CDN `static.dot
 | Account data (email, password hash, Apple identifier, name) | For as long as your account exists. Deleted when you delete your account. |
 | Apple refresh token | Same as above. Used once during deletion, to revoke the authorisation, then deleted. |
 | Your collection, your sealed products, your wishlist | For as long as your account exists. Deleted when you delete your account. Removing a card removes it from your other devices too, and leaves behind only a marker saying it was removed, which is how your devices learn about the removal. That marker goes with the account. |
-| Scan photos | Never retained anywhere, by us or by anyone else, because they never leave your phone. |
+| Scan photos | Not retained by us. A photo your phone could read never leaves it; a photo sent for recognition (section 2.2) is not stored on our servers. |
+| Nickname, profile photo, privacy setting, share link (section 2.10) | For as long as your account exists, or until you change them: a replaced photo is deleted, a cancelled link stops working immediately. All of it is deleted when you delete your account. |
+| A photo refused by moderation | Never stored by us. |
+| Reports of a shared page (section 2.10) | For as long as both accounts exist: a report is deleted when either the person who sent it or the person it concerns deletes their account. The notification email we received stays in our mailbox. |
 | Subscription data at RevenueCat | For as long as RevenueCat needs it to recognise your subscription and honour a restore, in line with its own retention policy. A purchase record necessarily outlives a cancellation, otherwise restoring a subscription could not work. |
 | Technical logs of our server functions | Short-lived, in line with Supabase's own log retention. They contain error messages and technical metadata. |
 | The local copy on your device | Until you delete the app, or until you delete your account, which wipes it. |
@@ -240,7 +280,7 @@ You can delete your account from inside the app, in **Settings → Account → D
 
 Deleting your account:
 
-- permanently deletes your account and everything attached to it from our servers: email, password hash, Apple identifier, name, Apple refresh token, your collection, your sealed products, your wishlist, and any feedback or price report you sent from the app;
+- permanently deletes your account and everything attached to it from our servers: email, password hash, Apple identifier, name, Apple refresh token, your collection, your sealed products, your wishlist, your nickname, your profile photo and your share link (which stops working at once), and any feedback, price report or page report you sent from the app;
 - revokes Logbook's Sign in with Apple authorisation with Apple, where applicable;
 - **wipes your collection, your sealed products, your wishlist and all locally cached data from the device you are signed in on.**
 
@@ -278,7 +318,7 @@ To be explicit, because a lot of apps in this category do the opposite:
 - **No cross-app tracking.** No attribution SDK, no third-party tracker, no advertising identifier. A notification token is not one of those: it is an address your own device answers at, it means nothing to any other app, and it identifies the installation rather than you. We do not follow you into other apps or websites, and we do not ask you to allow tracking, because there is nothing to allow. We do measure how Logbook itself is used, which is a different thing, and section 2.6 is explicit about it.
 - **No profiling.** We do not build a profile of you and we do not enrich your data from other sources.
 - **No data sales.** We do not sell your data, and we will never make selling it part of the business model. If this ever changes, it will require your explicit prior consent, and a new version of this policy.
-- **No other use of your collection.** We store it so that you cannot lose it, and for nothing else: it is not shared with other users (Logbook has no social or publishing features), not published as market data, and not sold. Holding a backup does mean we are technically able to read it, as is true of any service that stores anything on your behalf, and we do not look at it beyond keeping the service working.
+- **No other use of your collection.** We store it so that you cannot lose it, and for nothing else: it is not shown to other users unless you create a public profile to share it (section 2.10), and then only the parts that section lists; it is not published as market data, and not sold. Holding a backup does mean we are technically able to read it, as is true of any service that stores anything on your behalf, and we do not look at it beyond keeping the service working.
 
 ## 9. Children
 
@@ -287,6 +327,8 @@ Logbook is not intended for children under 13, and we do not knowingly collect d
 ## 10. Changes to this policy
 
 We may update this policy as the app evolves. The date at the top always reflects the most recent version, and significant changes will be announced in the app before they take effect.
+
+**The 10 October 2026 version records one change: you can now share your collection.** It is optional and off until you create a public profile. Section 2.10 lists what a shared page shows (never what you paid), how to make it private or cancel the link, and how reports work. It adds two processors to section 4: OpenAI, which checks a profile photo before it is published, and Vercel, which hosts the website the shared pages are served from. It also corrects section 5, which still said scan photos never leave your phone after the 22 September version had changed that.
 
 **The 22 September 2026 version records one change: a card your phone cannot read can now be sent to a recognition service.** Until now, recognition ran only on your device and a failed read meant typing the code in. Now, only after a failed read, the photo is sent to CardSight AI to identify the card (section 2.2), which adds a seventh processor to section 4. Cards your phone reads itself — most of them — still never leave it.
 
